@@ -34,5 +34,10 @@ const routes = [
     path:'/textflow',
     component:()=>import('../components/textflow.vue'),
     cname:'文字流'
+},{
+    name:'NightDayToggle',
+    path:'/NightDayToggle',
+    component:()=>import('../components/NightDayToggle.vue'),
+    cname:'日夜按钮'
 }]
 export default routes
