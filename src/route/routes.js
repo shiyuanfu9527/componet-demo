@@ -54,5 +54,10 @@ const routes = [
     path:'/esignature',
     component:()=>import('../components/esignature.vue'),
     cname:'电子签名'
+},{
+    name:'clockroate',
+    path:'/clockroate',
+    component:()=>import('../components/clockroate.vue'),
+    cname:'时钟旋转'
 }]
 export default routes
