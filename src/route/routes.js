@@ -39,5 +39,20 @@ const routes = [
     path:'/NightDayToggle',
     component:()=>import('../components/NightDayToggle.vue'),
     cname:'日夜按钮'
+},{
+    name:'waterdrop',
+    path:'/waterdrop',
+    component:()=>import('../components/waterdrop.vue'),
+    cname:'水滴效果'
+},{
+    name:'buttonstyle1',
+    path:'/button1',
+    component:()=>import('../components/buttonstyle1.vue'),
+    cname:'按钮1'
+},{
+    name:'esignature',
+    path:'/esignature',
+    component:()=>import('../components/esignature.vue'),
+    cname:'电子签名'
 }]
 export default routes
