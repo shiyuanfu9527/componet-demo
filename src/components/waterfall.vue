@@ -10,16 +10,22 @@
   <script setup>
   import { onMounted, reactive } from 'vue'
       const items = reactive([
-        { src: 'https://picsum.photos/id/0/300/200', height: 200, top: 0, left: 0 },
-        { src: 'https://picsum.photos/id/10/300/400', height: 400, top: 0, left: 0 },
-        { src: 'https://picsum.photos/id/20/300/300', height: 300, top: 0, left: 0 },
-        { src: 'https://picsum.photos/id/30/300/250', height: 250, top: 0, left: 0 },
-        { src: 'https://picsum.photos/id/40/300/350', height: 350, top: 0, left: 0 },
-        { src: 'https://picsum.photos/id/50/300/200', height: 200, top: 0, left: 0 },
-        { src: 'https://picsum.photos/id/60/300/300', height: 300, top: 0, left: 0 },
-        { src: 'https://picsum.photos/id/70/300/350', height: 350, top: 0, left: 0 },
-        { src: 'https://picsum.photos/id/80/300/250', height: 250, top: 0, left: 0 },
-        { src: 'https://picsum.photos/id/90/300/400', height: 400, top: 0, left: 0 }
+        { src: 'https://picsum.photos/300/200', height: 200, top: 0, left: 0 },
+        { src: 'https://picsum.photos/300/400', height: 400, top: 0, left: 0 },
+        { src: 'https://picsum.photos/300/300', height: 300, top: 0, left: 0 },
+        { src: 'https://picsum.photos/300/250', height: 250, top: 0, left: 0 },
+        { src: 'https://picsum.photos/300/350', height: 350, top: 0, left: 0 },
+        { src: 'https://picsum.photos/300/200', height: 200, top: 0, left: 0 },
+        { src: 'https://picsum.photos/300/300', height: 300, top: 0, left: 0 },
+        { src: 'https://picsum.photos/300/350', height: 350, top: 0, left: 0 },
+        { src: 'https://picsum.photos/300/250', height: 250, top: 0, left: 0 },
+        { src: 'https://picsum.photos/300/400', height: 400, top: 0, left: 0 },
+        { src: 'https://picsum.photos/300/250', height: 250, top: 0, left: 0 },
+        { src: 'https://picsum.photos/300/350', height: 350, top: 0, left: 0 },
+        { src: 'https://picsum.photos/300/200', height: 200, top: 0, left: 0 },
+        { src: 'https://picsum.photos/300/300', height: 300, top: 0, left: 0 },
+        { src: 'https://picsum.photos/300/350', height: 350, top: 0, left: 0 },
+        { src: 'https://picsum.photos/300/250', height: 250, top: 0, left: 0 },
       ])
   
       const layout = () => {
