@@ -8,7 +8,7 @@
   </template>
   
   <script setup>
-  import { onMounted, reactive } from 'vue'
+  import { onMounted, onUnmounted, reactive } from 'vue'
       const items = reactive([
         { src: 'https://picsum.photos/300/200', height: 200, top: 0, left: 0 },
         { src: 'https://picsum.photos/300/400', height: 400, top: 0, left: 0 },
@@ -47,6 +47,9 @@
       onMounted(() => {
         layout()
         window.addEventListener('resize', layout)
+      })
+      onUnmounted(()=>{
+        window.removeEventListener('resize',layout)
       })
   </script>
   
