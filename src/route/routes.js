@@ -50,14 +50,19 @@ const routes = [
     component:()=>import('../components/buttonstyle1.vue'),
     cname:'按钮1'
 },{
-    name:'esignature',
-    path:'/esignature',
-    component:()=>import('../components/esignature.vue'),
-    cname:'电子签名'
-},{
     name:'clockroate',
     path:'/clockroate',
     component:()=>import('../components/clockroate.vue'),
     cname:'时钟旋转'
+},{
+    name:'snow',
+    path:'/snow',
+    component:()=>import('../components/snow.vue'),
+    cname:'雪花1'
+},{
+    name:'canvasSnow',
+    path:'/canvasSnow',
+    component:()=>import('../components/canvasSnow.vue'),
+    cname:'雪花2'
 }]
 export default routes

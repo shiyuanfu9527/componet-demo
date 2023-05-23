@@ -1,5 +1,4 @@
-<script>
-</script>
+
 <template>
     <div>
         <span class="bulb">💡</span>

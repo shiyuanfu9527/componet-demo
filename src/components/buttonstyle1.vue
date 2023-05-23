@@ -52,7 +52,6 @@ body{
         height: 1px;
         background: linear-gradient(to left, transparent, #0FF);
         animation: run3 1s linear infinite;
-        animation-delay: 1s;
     }
     :nth-child(4) {
         position: absolute;
@@ -62,7 +61,7 @@ body{
         height: 100%;
         background: linear-gradient(to top, transparent, #0FF);
         animation: run4 1s linear infinite;
-        animation-delay: 1.5s;
+        animation-delay: .5s;
     }
 
 }

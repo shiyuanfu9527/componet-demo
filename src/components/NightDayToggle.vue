@@ -1,3 +1,21 @@
+
+<script setup>
+import { onMounted } from 'vue';
+
+onMounted(() => {
+    const BUTTON = document.querySelector("button");
+    const SYNC = document.querySelector("#sync")
+
+    const TOGGLE = () => {
+        const IS_PRESSED = BUTTON.matches("[aria-pressed=true]");
+        if (SYNC.checked)
+            document.body.setAttribute("data-dark-mode", IS_PRESSED ? false : true);
+        BUTTON.setAttribute("aria-pressed", IS_PRESSED ? false : true);
+    };
+
+    BUTTON.addEventListener("click", TOGGLE);
+})
+</script>
 <template>
     <div class="controls">
         <label for="sync">Sync &lt;body&gt;</label>
@@ -173,23 +191,6 @@
     </button>
 </template>
 
-<script setup>
-import { onMounted } from 'vue';
-
-onMounted(() => {
-    const BUTTON = document.querySelector("button");
-    const SYNC = document.querySelector("#sync")
-
-    const TOGGLE = () => {
-        const IS_PRESSED = BUTTON.matches("[aria-pressed=true]");
-        if (SYNC.checked)
-            document.body.setAttribute("data-dark-mode", IS_PRESSED ? false : true);
-        BUTTON.setAttribute("aria-pressed", IS_PRESSED ? false : true);
-    };
-
-    BUTTON.addEventListener("click", TOGGLE);
-})
-</script>
 
 <style  >
 *,
