@@ -64,5 +64,10 @@ const routes = [
     path:'/canvasSnow',
     component:()=>import('../components/canvasSnow.vue'),
     cname:'雪花2'
+},{
+    name:'waterfall',
+    path:'/waterfall',
+    component:()=>import('../components/waterfall.vue'),
+    cname:'瀑布流'
 }]
 export default routes
