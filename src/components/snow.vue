@@ -1,6 +1,8 @@
 <template>
       <!-- 添加下雪效果的元素 -->
+      <div class="snowWrapper">
       <div class="snow" v-for="(index) in 10" :key="index"></div>
+    </div>
   </template>
   
   <style lang = 'scss' >
@@ -13,8 +15,12 @@
       $value: #{$value}, #{random(2000)}px #{random(2000)}px rgba(255,255,255,random(10)/10);
     }
     @return $value 
+  };
+  .snowWrapper{
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
   }
-  
   .snow {
     // 设置位置
     position: absolute;

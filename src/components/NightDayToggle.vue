@@ -221,8 +221,8 @@ onMounted(() => {
 }
 
 body {
-    display: grid;
-    place-items: center;
+    /* display: grid;
+    place-items: center; */
     min-height: 100vh;
     overflow: hidden;
     background: var(--bg);

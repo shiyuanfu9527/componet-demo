@@ -1,5 +1,5 @@
 <script setup>
-import autoEllipsis from './autoEllipsis.vue';
+import autoEllipsis from '../components/autoEllipsis.vue';
 </script>
 <template>
     <div class="textEllipsis">
@@ -10,6 +10,6 @@ import autoEllipsis from './autoEllipsis.vue';
 .textEllipsis{
   max-width: 200px;
   border: 1px solid red;
-  margin: 0 auto;
+  margin: 50% auto;
 }
 </style>

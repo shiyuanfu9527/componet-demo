@@ -10,9 +10,9 @@
 body{
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  background-color: #c0d12b;
+  /* display: flex;
+  justify-content: center; */
+  /* background-color: #c0d12b; */
 }
 #water{
   width: 300px;

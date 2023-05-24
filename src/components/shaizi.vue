@@ -114,7 +114,7 @@ async function onAnimationEnd() {
 .shaizi {
     width: 120px;
     height: 120px;
-    margin: 50px auto;
+    margin: 100% auto;
     position: relative;
     transform-style: preserve-3d;
     transition: all 1s;

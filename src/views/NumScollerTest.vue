@@ -39,5 +39,6 @@ onBeforeMount(()=>{
 <style lang="scss" >
 .NumFlex{
     display: flex;
+    margin: 50% 0;
 }
 </style>

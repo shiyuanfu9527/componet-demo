@@ -17,7 +17,7 @@ const routes = [
 },{
     name:'auto',
     path:'/testauto',
-    component:()=>import('../components/autoEllipsisWrapper.vue'),
+    component:()=>import('../views/autoEllipsisWrapper.vue'),
     cname:'测试省略'
 },{
     name:'light',
