@@ -74,5 +74,10 @@ const routes = [
     path:'/numscollertest',
     component:()=>import('../views/NumScollerTest.vue'),
     cname:'数字滚动'
+},{
+    name:'cart',
+    path:'/cart',
+    component:()=>import('../views/cart.vue'),
+    cname:'购物车'
 }]
 export default routes
