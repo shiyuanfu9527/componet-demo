@@ -69,5 +69,10 @@ const routes = [
     path:'/waterfall',
     component:()=>import('../components/waterfall.vue'),
     cname:'瀑布流'
+},{
+    name:'NumScollerTest',
+    path:'/numscollertest',
+    component:()=>import('../views/NumScollerTest.vue'),
+    cname:'数字滚动'
 }]
 export default routes
