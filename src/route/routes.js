@@ -79,5 +79,15 @@ const routes = [
     path:'/cart',
     component:()=>import('../views/cart.vue'),
     cname:'购物车'
+},{
+    name:'404light',
+    path:'/404',
+    component:()=>import('../views/404light.vue'),
+    cname:'404'
+},{
+    name:'ironloading',
+    path:'/ironloading',
+    component:()=>import('../views/ironloading.vue'),
+    cname:'loading'
 }]
 export default routes
