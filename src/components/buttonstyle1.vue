@@ -8,6 +8,9 @@
     </div>
 </template>
 <style lang="less" >
+body{
+    background-color: #000;
+}
 .main {
     cursor: pointer;
     width: 100px;

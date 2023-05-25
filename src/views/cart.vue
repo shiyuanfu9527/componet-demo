@@ -177,26 +177,27 @@ let count = 0;
     background: #ff7979;
 }
 
-body {
+/* body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    background: #ff7979;
-    padding: 0 20px;
-}
+    
+} */
 
 .wrapper {
     position: relative;
     max-width: 1130px;
+    min-height: 100vh;
+    background: #ff7979;
+    padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 .wrapper .cart-nav {
     position: absolute;
-    right: 0;
-    top: -35%;
+    right: 5%;
+    top: 10%;
     width: 130px;
     background: #fff;
     padding: 13px 15px;
