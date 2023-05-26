@@ -109,13 +109,12 @@ const getWeather = (cityName) => {
         <div class="ehcart-container" ref="echartContainer" style="height: 200px;"></div>
     </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 .container {
     min-height: 100%;
     background: #000;
     opacity: 0.7;
     color: #fff;
-    margin: 25% 0;
 }
 .city-info {
     text-align: center;
