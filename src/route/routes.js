@@ -93,5 +93,10 @@ const routes = [
     path:'/ironloading',
     component:()=>import('../views/ironloading.vue'),
     cname:'loading'
+},{
+    name:'gaodemap',
+    path:'/map',
+    component:()=>import('../views/gaodemap.vue'),
+    cname:'高德地图'
 }]
 export default routes
