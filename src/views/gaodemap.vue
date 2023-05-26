@@ -34,6 +34,7 @@ const getWeather = (cityName) => {
             data.forecasts.forEach(item => {
                 tempArr.value.push(item.dayTemp)
             })
+            // 初始化echart 要加个定时器，不然dom没渲染后，获取不不到宽度和高度
             setTimeout(() => {
                 initEchart()
             }, 200);
@@ -42,7 +43,9 @@ const getWeather = (cityName) => {
     });
 
     const initEchart = () => {
+        // 初始化
         const myChat = echarts.init(echartContainer.value)
+        // 配置项
         let option = {
             xAxis: {
                 type: 'category',
