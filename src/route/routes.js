@@ -1,7 +1,11 @@
 const routes = [
     {
+        path:'/',
+        redirect:'/hello'
+    },
+    {
     name:'hello',
-    path:'/',
+    path:'/hello',
     component:()=>import('../components/HelloWorld.vue'),
     cname:'首页'
 },{
