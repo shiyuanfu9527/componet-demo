@@ -98,5 +98,10 @@ const routes = [
     path:'/map',
     component:()=>import('../views/gaodemap.vue'),
     cname:'高德地图'
+},{
+    name:'textmove',
+    path:'/textmove',
+    component:()=>import('../views/textmove.vue'),
+    cname:'文字移动'
 }]
 export default routes
