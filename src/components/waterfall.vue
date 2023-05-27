@@ -9,7 +9,8 @@
   
   <script setup>
   import { onMounted, onUnmounted, reactive } from 'vue'
-      const items = reactive([
+  let imglist = []
+      let items = reactive([
         { src: 'https://picsum.photos/300/200', height: 200, top: 0, left: 0 },
         { src: 'https://picsum.photos/300/400', height: 400, top: 0, left: 0 },
         { src: 'https://picsum.photos/300/300', height: 300, top: 0, left: 0 },
@@ -27,7 +28,21 @@
         { src: 'https://picsum.photos/300/350', height: 350, top: 0, left: 0 },
         { src: 'https://picsum.photos/300/250', height: 250, top: 0, left: 0 },
       ])
-  
+      fetch('https://api.apiopen.top/api/getImages?type=beauty&size=16',{
+        method:'GET',
+        headers:{
+          'Content-type':'application/json'
+        }
+      })
+  .then(response=>response.json())
+  .then((data)=>{
+    imglist = data.result.list
+    items.forEach((item,index)=>{
+      item.src = imglist[index].url
+      console.log(imglist[index].url)
+    })
+  })
+  .catch(error=>console.log(error))
       const layout = () => {
         const containerWidth = document.querySelector('.waterfall').clientWidth
         const itemWidth = 300
