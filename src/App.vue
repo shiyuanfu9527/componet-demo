@@ -1,6 +1,5 @@
 <script setup>
 // import HelloWorld from './components/HelloWorld.vue'
-
 import { ref } from 'vue';
 import routes from './route/routes'
 let mask = ref(null)
@@ -15,6 +14,37 @@ const routerbtnclick=((e)=>{
   mask.value.style.display = 'none'
   
 })
+const mousetexts = ['富强','民主','文明','和谐','自由','平等','公正','法制']
+const createDiv = (x,y,text)=>{
+  const colorArr = ['red','yellow','green','blue','orange','black']
+  const index = Math.floor(Math.random()*colorArr.length)
+  const color = colorArr[index]
+  const newDiv = document.createElement("div")
+  newDiv.innerText = text
+  newDiv.classList.add("newDiv")
+  newDiv.style.color = color
+  newDiv.style.opacity = 1
+  let num = Math.round(Math.random())
+  x = x - newDiv.offsetWidth
+  y = y - newDiv.offsetHeight
+  let timer = setInterval(()=>{
+    y-=10
+    if(num===0)x-=1
+    else x+=1
+    newDiv.style.left = x+'px'
+    newDiv.style.top = y + 'px'
+    setTimeout(()=>{
+      clearInterval(timer)
+      newDiv.remove()
+    },500)
+  },100)
+  document.body.appendChild(newDiv)
+}
+document.body.onmousedown = (e) =>{
+    const index = Math.floor(Math.random()*8)
+    const text = mousetexts[index]
+    createDiv(e.clientX,e.clientY,text)
+  }
 </script>
 
 <template>
@@ -42,7 +72,32 @@ const routerbtnclick=((e)=>{
 </div>
 <div class="mask" ref="mask" :style="{display:'none'}"></div>
 </template>
-
+<style lang="scss">
+  /* @keyframes myFirst {
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  } */
+  @keyframes mySecond {
+    from{
+      opacity: 1;
+    }
+    to{
+      opacity: 0;
+    }
+  }
+  .newDiv{
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    /* animation: myFirst 0.8s; */
+    animation: mySecond 0.8s initial;
+  }
+</style>
 <style scoped lang="less">
 .routerbtn{
   cursor: pointer;
@@ -71,6 +126,7 @@ const routerbtnclick=((e)=>{
 .flexWrapper{
   display: flex;
   width: 100%;
+  height: 100vh;
 }
 .router{
   position: absolute;
@@ -112,6 +168,7 @@ const routerbtnclick=((e)=>{
 }
 .view{
   margin: auto;
+
 }
 .navtor {
   color: black;

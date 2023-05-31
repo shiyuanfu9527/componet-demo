@@ -10,7 +10,6 @@
   
 <script setup>
 import { onMounted, onUnmounted, reactive } from 'vue'
-import convertImgToBase64 from '../utils/toBase64.js'
 const randomnum = Math.floor(Math.random() * 100) + 1
 let items = reactive([
   { src: '', height: 200, top: 0, left: 0 },
@@ -77,7 +76,7 @@ onUnmounted(() => {
   width: 960px;
 }
 :root{
-    background-color: #000;
+    background-color: #fff;
   }
 .item {
   position: absolute;

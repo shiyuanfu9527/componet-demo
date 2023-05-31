@@ -3,8 +3,10 @@
 
 <template>
   <h1>各种demo</h1>
-  <img class='avtor' src="https://p3-passport.byteimg.com/img/user-avatar/ee1a1456b52fb7cff320f0f8b8a96698~100x100.awebp"
-    alt="">
+  <img class='avtor' src="https://p3-passport.byteimg.com/img/user-avatar/ee1a1456b52fb7cff320f0f8b8a96698~100x100.awebp">
+    <div class="dynamic-background">
+      <iframe src="https://api.r10086.com/PPT/PPT.php?PPT=原神" width="100%" height="100%" style="border: 0;"></iframe>
+      </div>
 </template>
 
 <style scoped>
@@ -22,4 +24,12 @@ h1 {
   transition-property: all;
   transition-duration: 59s;
   transition-timing-function: cubic-bezier(.34, 0, .84, 1);
+}
+.dynamic-background{
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: fixed;
+  left: 0%;
+  top: 0%;
 }</style>
