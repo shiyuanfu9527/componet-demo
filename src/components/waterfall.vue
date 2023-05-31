@@ -41,12 +41,14 @@ fetch(`https://www.mxnzp.com/api/image/girl/list?page=${randomnum}&app_id=sghs8p
     // 接口数据不够咯只有十条 让他求余重复
     items.forEach((item, index) => {
       item.src = data.data.list[index % 10].imageUrl
+      item.height = data.data.list[index % 10].imageSize.split('x')[1]/(Math.floor(Math.random()*3)+3)
     })
+    layout()
   })
   .catch(error => console.log(error))
 const layout = () => {
   const containerWidth = document.querySelector('.waterfall').clientWidth
-  const itemWidth = 300
+  const itemWidth = 320
   const gap = 10
   const columnCount = Math.floor(containerWidth / (itemWidth + gap))
   const columnHeights = new Array(columnCount).fill(0)
@@ -73,14 +75,14 @@ onUnmounted(() => {
 .waterfall {
   position: relative;
   margin: 0 auto;
-  width: 960px;
+  width: 1020px;
 }
 :root{
     background-color: #fff;
   }
 .item {
   position: absolute;
-  width: 300px;
+  width: 320px;
   transition: all 0.3s ease-out;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
