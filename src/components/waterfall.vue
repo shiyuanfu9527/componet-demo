@@ -10,6 +10,8 @@
   
 <script setup>
 import { onMounted, onUnmounted, reactive } from 'vue'
+import convertImgToBase64 from '../utils/toBase64.js'
+const randomnum = Math.floor(Math.random() * 100) + 1
 let items = reactive([
   { src: '', height: 200, top: 0, left: 0 },
   { src: '', height: 400, top: 0, left: 0 },
@@ -32,12 +34,12 @@ let items = reactive([
   { src: '', height: 250, top: 0, left: 0 },
   { src: '', height: 400, top: 0, left: 0 },
 ])
-fetch('https://www.mxnzp.com/api/image/girl/list?page=2&app_id=sghs8pllwqmxilgc&app_secret=MXVSanhjMnB1eG1ubnExOEJQc3EvQT09', {
+fetch(`https://www.mxnzp.com/api/image/girl/list?page=${randomnum}&app_id=sghs8pllwqmxilgc&app_secret=MXVSanhjMnB1eG1ubnExOEJQc3EvQT09`, {
   method: 'GET'
 })
   .then(response => response.json())
   .then((data) => {
-    // 接口数据不够咯
+    // 接口数据不够咯只有十条 让他求余重复
     items.forEach((item, index) => {
       item.src = data.data.list[index % 10].imageUrl
     })
@@ -74,7 +76,9 @@ onUnmounted(() => {
   margin: 0 auto;
   width: 960px;
 }
-
+:root{
+    background-color: #000;
+  }
 .item {
   position: absolute;
   width: 300px;
