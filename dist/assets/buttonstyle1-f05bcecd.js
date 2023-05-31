@@ -1,0 +1,1 @@
+import{_ as t,o as n,c as s,j as o,b as e}from"./index-2c5a907b.js";const _={},l={class:"main"},c=e("div",null,null,-1),a=e("div",null,null,-1),d=e("div",null,null,-1),i=e("div",null,null,-1);function u(r,v){return n(),s("div",l,[c,a,d,i,o(" 旋转跳跃 ")])}const h=t(_,[["render",u]]);export{h as default};

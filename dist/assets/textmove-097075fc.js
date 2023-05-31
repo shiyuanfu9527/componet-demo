@@ -1,4 +1,0 @@
-import{_ as h,r as u,n as w,d as g,e as k,o as p,c as v,b as f,F as i,v as $,l as B}from"./index-f23010d8.js";const r=.01,E={__name:"textmove",setup(L){const c=u(null);let l,m,o;w(()=>{l=c.value.offsetWidth,m=window.screen.availHeight,o={x:l/2,y:m/2}});let n=u([]);const x=t=>{n.value.push(t)},_=t=>{const{x:d,y:s}=t,a={mcx:d-o.x,mcy:s-o.y},y=n.value.length;for(let e=1;e<=y;e++)n.value[e-1].style.transform=`perspective(500px)
-            rotate(${a.mcx*e*r}deg)
-            translate3d(0px,${a.mcy*e*r*5}px,${-15*e}px)
-            skew(${a.mcy*r*e}deg)`};return g(()=>{window.addEventListener("mousemove",_)}),k(()=>{window.removeEventListener("mousemove",_)}),(t,d)=>(p(),v(i,null,[f("h1",{ref_key:"hdom",ref:c},"waves",512),(p(),v(i,null,$(4,s=>f("span",{key:s,ref_for:!0,ref:x,class:B(["copy",`copy${s}`])},"waves",2)),64))],64))}},M=h(E,[["__scopeId","data-v-f7787061"]]);export{M as default};
