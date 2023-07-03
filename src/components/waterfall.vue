@@ -8,10 +8,10 @@
   </div>
 </template>
   
-<script setup>
+<script lang="ts" setup>
 import { onMounted, onUnmounted, reactive } from 'vue'
-const randomnum = Math.floor(Math.random() * 100) + 1
-let items = reactive([
+const randomnum:Number = Math.floor(Math.random() * 100) + 1
+let items = reactive<any>([
   { src: '', height: 200, top: 0, left: 0 },
   { src: '', height: 400, top: 0, left: 0 },
   { src: '', height: 300, top: 0, left: 0 },
@@ -39,23 +39,25 @@ fetch(`https://www.mxnzp.com/api/image/girl/list?page=${randomnum}&app_id=sghs8p
   .then(response => response.json())
   .then((data) => {
     // 接口数据不够咯只有十条 让他求余重复
-    items.forEach((item, index) => {
+    items.forEach((item: { src: URL; height: number; }, index: number) => {
       item.src = data.data.list[index % 10].imageUrl
       item.height = data.data.list[index % 10].imageSize.split('x')[1]/(Math.floor(Math.random()*3)+3)
+      //随机图片高度的倍数
     })
     layout()
   })
   .catch(error => console.log(error))
-const layout = () => {
-  const containerWidth = document.querySelector('.waterfall').clientWidth
-  const itemWidth = 320
-  const gap = 10
-  const columnCount = Math.floor(containerWidth / (itemWidth + gap))
-  const columnHeights = new Array(columnCount).fill(0)
-  items.forEach((item, index) => {
-    const minIndex = columnHeights.indexOf(Math.min(...columnHeights))
-    const left = minIndex * (itemWidth + gap)
-    const top = columnHeights[minIndex]
+const layout :Function = () => {
+  const containerWidth: any = document.querySelector('.waterfall')?.clientWidth
+  const itemWidth: number = 320
+  const gap: number = 10
+  const columnCount: number = Math.floor(containerWidth / (itemWidth + gap))
+  const columnHeights: number[] = new Array(columnCount).fill(0)
+  //计算哪一列的高度最短，将图片放在最短的那一列
+  items.forEach((item: { height: number; top: number; left: number; }) => {
+    const minIndex: number = columnHeights.indexOf(Math.min(...columnHeights))
+    const left: number = minIndex * (itemWidth + gap)
+    const top: number = columnHeights[minIndex]
     columnHeights[minIndex] += item.height + gap
     item.top = top
     item.left = left
@@ -64,11 +66,11 @@ const layout = () => {
 
 onMounted(() => {
   layout()
-  window.addEventListener('resize', layout)
+  // window.addEventListener('resize', layout()) 没做响应式布局，所以没必要
 })
-onUnmounted(() => {
-  window.removeEventListener('resize', layout)
-})
+// onUnmounted(() => {
+//   window.removeEventListener('resize',layout())
+// })
 </script>
   
 <style>

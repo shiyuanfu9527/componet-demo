@@ -103,5 +103,10 @@ const routes = [
     path:'/textmove',
     component:()=>import('../views/textmove.vue'),
     cname:'文字移动'
+},{
+    name:'testContentMenu',
+    path:'/testContentMenu',
+    component:()=>import('../views/testContentMenu.vue'),
+    cname:'测试右键菜单'
 }]
 export default routes

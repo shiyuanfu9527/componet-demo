@@ -4,6 +4,7 @@ import NumScoller from '../components/NumScoller.vue';
 const nums = reactive([3, 8, 1, 5, 2, 6, 9, 4, 7, 0]) 
 let  numschange = null 
 onMounted(()=>{
+    //这样写，切页面再切回来会出现跳的情况
    numschange =  setInterval(()=>{
         nums.forEach((item,index)=>{
             if(item<9){
