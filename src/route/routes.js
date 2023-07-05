@@ -108,5 +108,10 @@ const routes = [
     path:'/testContentMenu',
     component:()=>import('../views/testContentMenu.vue'),
     cname:'测试右键菜单'
+},{
+    name:'switchChangePic',
+    path:'/switchChangePic',
+    component:()=>import('../views/switchChangePic.vue'),
+    cname:'滑动反差'
 }]
 export default routes
