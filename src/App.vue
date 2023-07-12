@@ -190,7 +190,7 @@ document.body.onmousedown = (e) => {
 
 .view {
   margin: auto;
-
+  width: 100%;
 }
 
 .navtor {

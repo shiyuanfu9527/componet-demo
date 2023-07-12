@@ -1,6 +1,6 @@
 <template>
   <!-- 瀑布流组件 -->
-  <div class="waterfall">
+  <div class="waterfall" ref="waterfall">
     <div v-for="(item, index) in items" :key="index" class="item"
       :style="{ top: item.top + 'px', left: item.left + 'px' }">
       <img :src="item.src" :style="{ height: item.height + 'px' }">
@@ -9,7 +9,7 @@
 </template>
   
 <script lang="ts" setup>
-import { onMounted, onUnmounted, reactive } from 'vue'
+import { onMounted, onUnmounted, reactive,ref } from 'vue'
 const randomnum:Number = Math.floor(Math.random() * 100) + 1
 let items = reactive<any>([
   { src: '', height: 200, top: 0, left: 0 },
@@ -47,17 +47,19 @@ fetch(`https://www.mxnzp.com/api/image/girl/list?page=${randomnum}&app_id=sghs8p
     layout()
   })
   .catch(error => console.log(error))
+  const waterfall = ref()
 const layout :Function = () => {
-  const containerWidth: any = document.querySelector('.waterfall')?.clientWidth
+  let containerWidth: any = waterfall.value.clientWidth
+  console.log(containerWidth);
   const itemWidth: number = 320
   const gap: number = 10
-  const columnCount: number = Math.floor(containerWidth / (itemWidth + gap))
-  const columnHeights: number[] = new Array(columnCount).fill(0)
+  let columnCount: number = Math.floor(containerWidth / (itemWidth + gap))
+  let columnHeights: number[] = new Array(columnCount).fill(0)
   //计算哪一列的高度最短，将图片放在最短的那一列
   items.forEach((item: { height: number; top: number; left: number; }) => {
-    const minIndex: number = columnHeights.indexOf(Math.min(...columnHeights))
-    const left: number = minIndex * (itemWidth + gap)
-    const top: number = columnHeights[minIndex]
+    let minIndex: number = columnHeights.indexOf(Math.min(...columnHeights))
+    let left: number = minIndex * (itemWidth + gap)
+    let top: number = columnHeights[minIndex]
     columnHeights[minIndex] += item.height + gap
     item.top = top
     item.left = left
@@ -66,18 +68,22 @@ const layout :Function = () => {
 
 onMounted(() => {
   layout()
-  // window.addEventListener('resize', layout()) 没做响应式布局，所以没必要
+  window.addEventListener('resize', ()=>{
+    layout()
+  })
 })
-// onUnmounted(() => {
-//   window.removeEventListener('resize',layout())
-// })
+onUnmounted(() => {
+  window.removeEventListener('resize',()=>{
+    layout()
+  })
+})
 </script>
   
 <style>
 .waterfall {
   position: relative;
   margin: 0 auto;
-  width: 1020px;
+  width: 95%;
 }
 :root{
     background-color: #fff;
