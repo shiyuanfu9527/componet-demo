@@ -113,5 +113,10 @@ const routes = [
     path:'/switchChangePic',
     component:()=>import('../views/switchChangePic.vue'),
     cname:'滑动反差'
+},{
+    name:'ringPicWall',
+    path:'/ringPicWall',
+    component:()=>import('../views/ringPicWall.vue'),
+    cname:'环绕式照片墙'
 }]
 export default routes

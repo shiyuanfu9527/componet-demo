@@ -49,17 +49,17 @@ fetch(`https://www.mxnzp.com/api/image/girl/list?page=${randomnum}&app_id=sghs8p
   .catch(error => console.log(error))
   const waterfall = ref()
 const layout :Function = () => {
-  let containerWidth: any = waterfall.value.clientWidth
+  const containerWidth: any = waterfall.value.clientWidth
   console.log(containerWidth);
   const itemWidth: number = 320
   const gap: number = 10
-  let columnCount: number = Math.floor(containerWidth / (itemWidth + gap))
-  let columnHeights: number[] = new Array(columnCount).fill(0)
+  const columnCount: number = Math.floor(containerWidth / (itemWidth + gap))
+  const columnHeights: number[] = new Array(columnCount).fill(0)
   //计算哪一列的高度最短，将图片放在最短的那一列
   items.forEach((item: { height: number; top: number; left: number; }) => {
-    let minIndex: number = columnHeights.indexOf(Math.min(...columnHeights))
-    let left: number = minIndex * (itemWidth + gap)
-    let top: number = columnHeights[minIndex]
+    const minIndex: number = columnHeights.indexOf(Math.min(...columnHeights))
+    const left: number = minIndex * (itemWidth + gap)
+    const top: number = columnHeights[minIndex]
     columnHeights[minIndex] += item.height + gap
     item.top = top
     item.left = left
