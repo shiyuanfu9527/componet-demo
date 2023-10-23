@@ -7,14 +7,14 @@
 <script lang="ts" setup>
 import { onMounted, onUnmounted, Ref, ref } from 'vue';
 
-const randomnum:Number = Math.floor(Math.random() * 100) + 1
+const randomnum:Number = Math.floor(Math.random() * 50) + 1
 const items = ref<any>([])
 fetch(`https://www.mxnzp.com/api/image/girl/list?page=${randomnum}&app_id=sghs8pllwqmxilgc&app_secret=MXVSanhjMnB1eG1ubnExOEJQc3EvQT09`, {
   method: 'GET'
 })
   .then(response => response.json())
   .then((data) => {
-    data.data.list.forEach((item: { imageUrl: any; }) => {
+    data.data.forEach((item: { imageUrl: any; }) => {
         items.value.push(item.imageUrl)
     });
   })

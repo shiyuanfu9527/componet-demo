@@ -10,7 +10,7 @@
   
 <script lang="ts" setup>
 import { onMounted, onUnmounted, reactive,ref } from 'vue'
-const randomnum:Number = Math.floor(Math.random() * 100) + 1
+const randomnum:Number = Math.floor(Math.random() * 50) + 1
 let items = reactive<any>([
   { src: '', height: 200, top: 0, left: 0 },
   { src: '', height: 400, top: 0, left: 0 },
@@ -40,8 +40,8 @@ fetch(`https://www.mxnzp.com/api/image/girl/list?page=${randomnum}&app_id=sghs8p
   .then((data) => {
     // 接口数据不够咯只有十条 让他求余重复
     items.forEach((item: { src: URL; height: number; }, index: number) => {
-      item.src = data.data.list[index % 10].imageUrl
-      item.height = data.data.list[index % 10].imageSize.split('x')[1]/(Math.floor(Math.random()*3)+3)
+      item.src = data.data[index % 10].imageUrl
+      item.height = data.data[index % 10].imageSize.split('x')[1]/(Math.floor(Math.random()*3)+3)
       //随机图片高度的倍数
     })
     layout()
