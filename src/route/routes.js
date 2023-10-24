@@ -118,5 +118,10 @@ const routes = [
     path:'/ringPicWall',
     component:()=>import('../views/ringPicWall.vue'),
     cname:'环绕式照片墙'
+},{
+    name:'usePdfPic',
+    path:'/usePdfPic',
+    component:()=>import('../components/usePdfPic/index.vue'),
+    cname:'导出PDF的图片'
 }]
 export default routes
