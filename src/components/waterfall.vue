@@ -9,6 +9,7 @@
 </template>
   
 <script lang="ts" setup>
+
 import { onMounted, onUnmounted, reactive,ref } from 'vue'
 const randomnum:Number = Math.floor(Math.random() * 50) + 1
 let items = reactive<any>([

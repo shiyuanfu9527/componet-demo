@@ -6,7 +6,7 @@ const routes = [
     {
     name:'hello',
     path:'/hello',
-    component:()=>import('../components/HelloWorld.vue'),
+    component:()=>import('../components/avtorcard.vue'),
     cname:'首页'
 },{
     name:'mousemove',
