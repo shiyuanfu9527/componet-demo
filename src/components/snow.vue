@@ -8,7 +8,6 @@
   <style lang = 'scss' >
   /* 下雪效果的样式 */
     /* 雪花落下的动画 */
-
   @function boxShadow($n){
     $value: #{random(2000)}px #{random(2000px)}px rgba(255,255,255,random(10)/10);
     @for $i from 1 through $n{
@@ -16,6 +15,9 @@
     }
     @return $value 
   };
+  :root{
+    background-color: #000;
+  }
   .snowWrapper{
     height: 100%;
     width: 100%;

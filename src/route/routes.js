@@ -1,8 +1,12 @@
 const routes = [
     {
+        path:'/',
+        redirect:'/hello'
+    },
+    {
     name:'hello',
-    path:'/',
-    component:()=>import('../components/HelloWorld.vue'),
+    path:'/hello',
+    component:()=>import('../components/avtorcard.vue'),
     cname:'首页'
 },{
     name:'mousemove',
@@ -89,5 +93,35 @@ const routes = [
     path:'/ironloading',
     component:()=>import('../views/ironloading.vue'),
     cname:'loading'
+},{
+    name:'gaodemap',
+    path:'/map',
+    component:()=>import('../views/gaodemap.vue'),
+    cname:'高德地图'
+},{
+    name:'textmove',
+    path:'/textmove',
+    component:()=>import('../views/textmove.vue'),
+    cname:'文字移动'
+},{
+    name:'testContentMenu',
+    path:'/testContentMenu',
+    component:()=>import('../views/testContentMenu.vue'),
+    cname:'测试右键菜单'
+},{
+    name:'switchChangePic',
+    path:'/switchChangePic',
+    component:()=>import('../views/switchChangePic.vue'),
+    cname:'滑动反差'
+},{
+    name:'ringPicWall',
+    path:'/ringPicWall',
+    component:()=>import('../views/ringPicWall.vue'),
+    cname:'环绕式照片墙'
+},{
+    name:'usePdfPic',
+    path:'/usePdfPic',
+    component:()=>import('../components/usePdfPic/index.vue'),
+    cname:'导出PDF的图片'
 }]
 export default routes

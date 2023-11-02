@@ -1,0 +1,1 @@
+import{_ as s,o as e,c as t,s as c}from"./index-e9b5a26c.js";const a={},i={class:"box"},_=c('<div class="lamp"><div class="lampLine"></div><div class="lampshade"></div><div class="bulb"></div><div class="ary"></div></div><div class="text"><h2>404</h2><p>哦豁,页面不存在!</p></div>',2),d=[_];function o(l,n){return e(),t("div",i,d)}const r=s(a,[["render",o]]);export{r as default};

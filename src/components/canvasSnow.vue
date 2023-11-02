@@ -65,3 +65,8 @@ import { onMounted, ref } from 'vue';
 <template>
     <canvas ref="Can"></canvas>
 </template>
+<style>
+    :root{
+        background-color: #000;
+    }
+</style>
