@@ -6,7 +6,7 @@
   <!-- <img class='avtor' src="https://p3-passport.byteimg.com/img/user-avatar/ee1a1456b52fb7cff320f0f8b8a96698~100x100.awebp"> -->
   <div class="card">
         <div class="imgBox">
-            <img src="https://avatars.githubusercontent.com/u/106981627?v=4" alt="">
+            <img src="https://img2.baidu.com/it/u=2794701416,1598421562&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=692" alt="">
         </div>
         <div class="content">
             <div class="details">

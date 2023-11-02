@@ -1,1 +1,0 @@
-import{g as c,r as o,o as r,c as s,b as u,t as a,u as _}from"./index-53063f40.js";const i=c("counter",()=>{const e=o(0);return{count:e,increment:()=>{e.value++}}},{persist:!0});const f={__name:"count",setup(e){const t=i(),n=()=>{t.increment()};return(l,p)=>(r(),s("h1",null,[u("button",{onClick:n},"count is "+a(_(t).count),1)]))}};export{f as default};
